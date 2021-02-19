@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './index.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 const App = () => {
 
@@ -35,14 +34,14 @@ const App = () => {
 		const newItems = [...items];
 		newItems[index].quantity--;
 
-		setItems(newItems)
+		setItems(newItems);
 	}
 	
 	const removeItem = (index) => {
 		const newItems = [...items];
-		const itemDeleted = newItems.splice(index,1)
+		newItems.splice(index,1);
 
-		setItems(newItems)
+		setItems(newItems);
 	}
 
 
@@ -55,7 +54,7 @@ const App = () => {
 				<input value={inputAmount} onChange={(event) => setInputAmount(event.target.value)} className='add-item-input' placeholder='Add an amount' />
 			</div>
 			<div className='add-item-box'>
-				<button onClick={() => handleAddButtonClick()} >+</button>
+				<button onClick={() => handleAddButtonClick()}>+</button>
 			</div>
 			<div className='item-list'>
 				{items.map((item, index) =>
